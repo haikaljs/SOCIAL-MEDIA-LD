@@ -17,7 +17,7 @@ const UserSchema = mongoose.Schema({
     password: {
         type: String,
         required: true,
-        min: 6
+        minLength: 6,
     },
     profilePic: {
         type: String,
@@ -38,6 +38,22 @@ const UserSchema = mongoose.Schema({
     isAdmin: {
         type: Boolean,
         default: false
+    },
+    desc: {
+        type: String,
+        max: 50
+    },
+    city: {
+        type: String,
+        max: 50
+    },
+    from : {
+        type: String,
+        max: 50
+    },
+    relationship: {
+        type: Number,
+        enum: [1,2,3]
     }
 }, {timestamps: true})
 
